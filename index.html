@@ -1,0 +1,25 @@
+<!-- index.html
+     透明无边框窗口，图标四周留出 8px 的拖拽边（可拖动），图标本体可点击/双击 -->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' file: data:; script-src 'self'; style-src 'self' 'unsafe-inline'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotating Chrome Widget</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- 外层拖拽容器：-webkit-app-region: drag 使窗口可拖动 -->
+  <div id="drag-wrap">
+    <!-- 内层圆形：设为 no-drag，保证可以接收点击/双击事件 -->
+    <div id="circle" class="no-drag">
+      <img id="icon" alt="Chrome Icon" draggable="false" />
+    </div>
+  </div>
+
+  <script src="./renderer.js"></script>
+</body>
+</html>
